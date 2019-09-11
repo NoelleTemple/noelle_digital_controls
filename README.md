@@ -135,6 +135,7 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
   ```
   
 -Test without shutting down R-Pi first:
+
   -Subscribe to topic 'ipaddress' on broker previously set up in MQTTBox Chrome Add-On
 ```
 sudo systemctl stop ip_boot
