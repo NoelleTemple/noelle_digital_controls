@@ -13,7 +13,7 @@ Please do not delete these instructions.
 -Flash SD card using Etcher software and Rasbian image.
 
 -Edit wpa_supplicant.conf file to include proper credentials for WIFI 
-  # ADD THIS SCRIPT
+  You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/wpa_supplicant.conf)
   
   To get hash code for password:
   ```
@@ -24,7 +24,7 @@ Please do not delete these instructions.
 -Add wpa_supplicant.conf file to boot directory on SD card.
 
 -Add interfaces file to boot directory on SD card.
-  # ADD THIS SCRIPT
+  You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/interfaces)
 
 -Insert SD card to Raspberry Pi, and connect R-Pi to power supply (micro USB), monitor (HDMI), keyboard (USB), and mouse (USB)
  
@@ -92,8 +92,7 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
 
 -In new VM terminal
   navigate to hello.sh
-  can download here
-  # Add file
+  can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/hello.sh)
   make sure to edit hello.sh to include appropriate information for MQTT broker
 
 -In VM terminal
@@ -103,8 +102,7 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
 
 -In VM terminal 
   navigate to ip_boot.service
-  can download here
-  # Add file
+  can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/ip_boot.service)
 
 -In VM terminal 
   ```
