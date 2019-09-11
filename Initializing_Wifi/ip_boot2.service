@@ -1,0 +1,10 @@
+[Unit] 
+After=network-online.target
+Description=Get IP Address
+
+[Service]
+ExecStart=/home/pi/hello.sh
+
+[Install]
+WantedBy=multi-user.target
+
