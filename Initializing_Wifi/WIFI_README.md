@@ -12,17 +12,17 @@ Please do not delete these instructions.
   ```
 -Flash SD card using Etcher software and Rasbian image.
 
--Edit wpa_supplicant.conf file to include proper credentials for WIFI __
-    You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/wpa_supplicant.conf)
-    If using multiple networks, assign priority.
+-Edit wpa_supplicant.conf file to include proper credentials for WIFI  
+    You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/wpa_supplicant.conf)  
+    If using multiple networks, assign priority.  
     To get hash code for password:
   ```
   echo -n "password" | iconv -t UTF-16LE | openssl md4
   ```
 -Add wpa_supplicant.conf file to boot directory on SD card.
 
--Add interfaces file to boot directory on SD card.
-   You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/interfaces)
+-Add interfaces file to boot directory on SD card.  
+    You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/interfaces)
 
 -Insert SD card to Raspberry Pi, and connect R-Pi to power supply (micro USB), monitor (HDMI), keyboard (USB), and mouse (USB)
  
@@ -54,11 +54,11 @@ sudo apt-get install screen
 ```
 sudo raspi-config
 ```
-   -Enable ssh
-   -Enable i2c
-   -Enable spi
-   -Enable serial
-   and then exit
+   -Enable ssh  
+   -Enable i2c  
+   -Enable spi  
+   -Enable serial  
+   and then exit  
   
 ```
 ifconfig
@@ -80,27 +80,27 @@ https://api.cloudmqtt.com
 ```
 https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf
 ```
-   -Enter MQTT Client Name (Arbitrary)
-   -Change protocol to mqtt/tcp
-   -Host should be in this format from CloudMQTT session:
+   -Enter MQTT Client Name (Arbitrary)  
+   -Change protocol to mqtt/tcp  
+   -Host should be in this format from CloudMQTT session:  
     ```
     <hostname>:<port number>
     ```
-   -Username and Password from CloudMQTT
+   -Username and Password from CloudMQTT  
 
--In new VM terminal
-    navigate to hello.sh
-    can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/hello.sh)
-    make sure to edit hello.sh to include appropriate information for MQTT broker
+-In new VM terminal  
+    navigate to hello.sh  
+    can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/hello.sh)  
+    make sure to edit hello.sh to include appropriate information for MQTT broker  
 
 -In VM terminal
   ```
   scp hello.sh pi@<IP Address>:/home/pi
   ```
 
--In VM terminal 
-    navigate to ip_boot.service
-    can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/ip_boot.service)
+-In VM terminal   
+    navigate to ip_boot.service  
+    can download [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/ip_boot.service)  
 
 -In VM terminal 
   ```
@@ -120,9 +120,9 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
   ```
   sudo systemctl enable ip_boot.service
   ```
-   It may ask you to run another command using daemon.  If it does, run the suggested command.
+   It may ask you to run another command using daemon.  If it does, run the suggested command.  
 
--Continuing in R-Pi terminal:
+-Continuing in R-Pi terminal:  
   ```
   sudo apt-get install mosquitto
   ```
@@ -130,8 +130,8 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
   sudo apt-get install mosquitto-clients
   ```
   
--Test without shutting down R-Pi first:
-    Subscribe to topic 'ipaddress' on broker previously set up in MQTTBox Chrome Add-On
+-Test without shutting down R-Pi first:  
+    Subscribe to topic 'ipaddress' on broker previously set up in MQTTBox Chrome Add-On  
 ```
 sudo systemctl stop ip_boot
 ```
