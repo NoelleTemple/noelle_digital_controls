@@ -11,3 +11,11 @@ Please do not delete these instructions.
   https://www.balena.io/etcher/
   ```
 3. Flash SD card using Etcher software and Rasbian image.
+
+4. Add wpa_supplicant.conf file to boot directory on SD card.
+  # ADD THIS SCRIPT
+
+5. Add interfaces file to boot directory on SD card.
+  # ADD THIS SCRIPT
+
+6. 
