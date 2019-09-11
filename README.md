@@ -125,6 +125,8 @@ https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbk
   sudo systemctl enable ip_boot.service
   ```
   It may ask you to run another command using daemon.  If it does, run the suggested command.
+
+-Continuing in R-Pi terminal:
   ```
   sudo apt-get install mosquitto
   ```
