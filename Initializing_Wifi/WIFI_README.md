@@ -12,7 +12,7 @@ Please do not delete these instructions.
   ```
 -Flash SD card using Etcher software and Rasbian image.
 
--Edit wpa_supplicant.conf file to include proper credentials for WIFI 
+-Edit wpa_supplicant.conf file to include proper credentials for WIFI __
     You can download that [here](https://github.com/NoelleTemple/noelle_digital_controls/blob/master/Initializing_Wifi/wpa_supplicant.conf)
     If using multiple networks, assign priority.
     To get hash code for password:
