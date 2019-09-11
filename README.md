@@ -46,6 +46,12 @@ Please do not delete these instructions.
 /etc/wpa_supplicant....
 ```
 -In R-Pi terminal
+```
+sudo apt-get update
+```
+```
+sudo apt-get install screen
+```
 
 ```
 sudo raspi-config
@@ -54,23 +60,41 @@ sudo raspi-config
   -Enable i2c
   -Enable spi
   -Enable serial
-
--In R-Pi terminal
+  and then exit
+  
 ```
 ifconfig
 ```
   Note IP address of R-Pi
 
--In separate terminal
+-In separate terminal (VM)
 ```
 ssh pi@<IP Address>
 ```
   can remove monitor, mouse, and keyboard from R-Pi here, because we can access it from separate machine.  Do not turn it off yet.
 
+-Create broker using CloudMQTT service online
+```
+https://api.cloudmqtt.com
+```
+
+-Create subscription using MQTTBox chrome add-on
+```
+https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf
+```
+  -Enter MQTT Client Name (Arbitrary)
+  -Change protocol to mqtt/tcp
+  -Host should be in this format from CloudMQTT session:
+    ```
+    <hostname>:<port number>
+    ```
+  -Username and Password from CloudMQTT
+
 -In new VM terminal
   navigate to hello.sh
   can download here
   # Add file
+  make sure to edit hello.sh to include appropriate information for MQTT broker
 
 -In VM terminal
   ```
@@ -101,5 +125,22 @@ ssh pi@<IP Address>
   sudo systemctl enable ip_boot.service
   ```
   It may ask you to run another command using daemon.  If it does, run the suggested command.
--
+  ```
+  sudo apt-get install mosquitto
+  ```
+  ```
+  sudo apt-get install mosquitto-clients
+  ```
   
+-Test without shutting down R-Pi first:
+  -Subscribe to topic 'ipaddress' on broker previously set up in MQTTBox Chrome Add-On
+```
+sudo systemctl stop ip_boot
+```
+```
+sudo systemctl start ip_boot
+```
+  You should see Private_IP:<IP Address> in MQTTBox
+
+-Test by unplugging, and plugging back in the R-Pi
+  You should see Private_IP:<IP Address> in MQTTBox
