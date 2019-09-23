@@ -1,9 +1,9 @@
-class Servo:
+class servo:
 	description = ""
 	boardpin = 0
 	frequency = 0
 
-	def __init__(self, description = "Servo", boardpin = 0, frequency = 50):
+	def __init__(self, description = "servo", boardpin = 0, frequency = 50):
 		self.description=description
 		self.boardpin=boardpin
 		self.frequency=frequency
