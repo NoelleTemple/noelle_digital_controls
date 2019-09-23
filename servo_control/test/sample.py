@@ -11,7 +11,7 @@ from servocntl_pkg import servo
 test=servo(description="testing control of Servo", boardpin = 35, frequency = 50)
 #this will print out all the information that you have set
 test.getinfo()
-
+#this will setup the GPIO pin as a pwm output pin
 test.setup()
-
+#this will move the servo, starting with a duty cycle of 7.5%
 test.moveservo(7.5)
