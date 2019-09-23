@@ -12,32 +12,6 @@ test=servo(description="testing control of Servo", boardpin = 35, frequency = 50
 #this will print out all the information that you have set
 test.getinfo()
 
-#keeps warnings from stopping the execution of the code
-GPIO.setwarnings(False)
-#Sets the pin number supplied to be the pin number on the board, and not the GPIO number. 
-#For GPIO number, use GPIO.BCM
-GPIO.setmode(GPIO.BOARD)
+test.setup()
 
-#Set the pin to an output
-GPIO.setup(test.boardpin,GPIO.OUT)
-#set up pulse width modulation and the frequency for the signal on the pin
-p=GPIO.PWM(test.boardpin,test.frequency)
-
-#start PWM signal
-p.start(0)
-
-#Change duty cycle to change the position of the servo motor
-p.ChangeDutyCycle(7.5)
-time.sleep(2)
-p.ChangeDutyCycle(12.5)
-time.sleep(2)
-p.ChangeDutyCycle(7.5)
-time.sleep(2)
-p.ChangeDutyCycle(2.5)
-time.sleep(2)
-
-#stop
-p.stop()
-#clear pins
-GPIO.cleanup()
-
+test.moveservo()

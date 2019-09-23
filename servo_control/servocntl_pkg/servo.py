@@ -1,3 +1,6 @@
+import RPi.GPIO as GPIO
+import time
+
 class servo:
 	description = ""
 	boardpin = 0
@@ -11,3 +14,19 @@ class servo:
 	def getinfo(self):
 		print("{}: board pin is {} and frequency is {}").format(self.description, self.boardpin, self.frequency)
 
+	def setup(self):
+		GPIO.setwarnings(False)
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setup(self.boardpin, GPIO.OUT)
+	
+	def moveservo(self):
+		p=GPIO.PWM(self.boardpin, self.frequency)
+		p.start(0)
+		p.ChangeDutyCycle(7.5)
+		time.sleep(2)
+		p.ChangeDutyCycle(2.5)
+		time.sleep(2)
+		p.ChangeDutyCycle(12.5)
+		time.sleep(2)
+		p.stop
+		GPIO.cleanup()
