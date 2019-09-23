@@ -1,8 +1,5 @@
 #sample code
 
-#this package should already be included with Raspbian
-import RPi.GPIO as GPIO
-import time
 #This is the setup we are testing with the sample
 from servocntl_pkg import servo
 
