@@ -7,4 +7,5 @@ setuptools.setup(
 	url='https://github.com/NoelleTemple/noelle_digital_controls/upload/master/servo_control',
 	author='Noelle Lewandowski',
 	packages=setuptools.find_packages(),
+	install_requires=['RPi.GPIO']
 )
