@@ -38,10 +38,24 @@ Run Sample code:
 ```
 python sample.py
 ```
-Here, the servo is identified with a desciption, the pin number on the board, and the frequency at which the control signal will opporate.  In this code, the servo will move to 4 different positions, changing based on the duty cycle of the control signal.
+Here, the servo is identified with a desciption, the pin number on the board, and the frequency at which the control signal will opporate.  This is the line in sample.py that defines these items:
+```
+test=servo(description="testing control of Servo", boardpin = 35, frequency = 50)
+```
+The description of this item is "testing control of Servo.
+The boardpin is 35.
+The frequency of the control signal is 50 Hz.  This is for a pwm signal with a period of 20 ms (1/50 Hz = 0.02 s)
 
-This contains the GPIO package, that comes pre-installed with Raspbian.  
-For more on GPIO uses:
+In this code, the servo will move to 4 different positions, changing based on the duty cycle of the control signal.  This is the code that shows the changing duty cycle.
+```
+p.ChangeDutyCycle(7.5)
+time.sleep(2)
+```
+The duty cycle is directly related to the position of the servo motor.  The time off / total time is the duty cycle.  Different servo motors will vary based on their range. 
+
+
+sample.py utilizes the GPIO package, this comes pre-installed with Raspbian.  
+This code was based off of information found at these two websites.  For more information on GPIO, visit:
 ```
 https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/
 https://projects.raspberrypi.org/en/projects/grandpa-scarer/4
