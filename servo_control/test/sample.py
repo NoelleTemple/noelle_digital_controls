@@ -14,4 +14,4 @@ test.getinfo()
 
 test.setup()
 
-test.moveservo()
+test.moveservo(7.5)

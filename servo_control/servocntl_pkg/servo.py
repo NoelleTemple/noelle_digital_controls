@@ -19,14 +19,14 @@ class servo:
 		GPIO.setmode(GPIO.BOARD)
 		GPIO.setup(self.boardpin, GPIO.OUT)
 	
-	def moveservo(self):
+	def moveservo(self, strtDC):
 		p=GPIO.PWM(self.boardpin, self.frequency)
 		p.start(0)
-		p.ChangeDutyCycle(7.5)
+		p.ChangeDutyCycle(strtDC)
 		time.sleep(2)
-		p.ChangeDutyCycle(2.5)
+		p.ChangeDutyCycle(strtDC-5)
 		time.sleep(2)
-		p.ChangeDutyCycle(12.5)
+		p.ChangeDutyCycle(strtDC+5)
 		time.sleep(2)
 		p.stop
 		GPIO.cleanup()
