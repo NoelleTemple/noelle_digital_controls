@@ -58,7 +58,12 @@ To find this code:
 ```
 nano ~/noelle_digital_controls/servo_control/servocntl_pkg/servo.py
 ```
-Here, the description of the servo, the pin number on the board, and the frequency at which the PWM signal operates is initialized.  Also included is a module to print that information, another to setup the pin for PWM output, and another that moves the motor simply to the middle, right, and left.
+Here, the description of the servo, the pin number on the board, and the frequency at which the PWM signal operates is initialized.  Also included is a module to print that information, another to setup the pin for PWM output, and another that moves the motor based on the duty cycled entered:
+
+```
+test.moveservo(7.5)
+```
+This will move the servo to the center position, then 90 degrees to the right, and 180 degrees from there to the left.
 
 
 servo.py utilizes the GPIO package, this comes pre-installed with Raspbian.  
