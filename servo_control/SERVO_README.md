@@ -26,7 +26,8 @@ https://components101.com/servo-motor-basics-pinout-datasheet
 
 Make sure to install the package:
 ```
-sudo pip install servo_control/
+cd ~/noelle_digital_controls/servo_control
+sudo pip install -e .
 ```
 This will automatically find the setup.py file and install the package.
 
