@@ -28,6 +28,8 @@ Make sure to install the package:
 ```
 sudo pip install servo_control/
 ```
+This will automatically find the setup.py file and install the package.
+
 Navigate to Sample code:
 ```
 cd ~/noelle_digital_controls/servo_control/test
