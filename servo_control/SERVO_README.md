@@ -17,4 +17,4 @@ Raspberry Pi Pinout:
 https://learn.sparkfun.com/tutorials/raspberry-gpio/gpio-pinout
 
 Example Servo:
-![Raspberry Pi Pinout](noelle_digital_controls/picture/RPi_Pinout.jpg)
+![Raspberry Pi Pinout](/noelle_digital_controls/picture/RPi_Pinout.jpg)
